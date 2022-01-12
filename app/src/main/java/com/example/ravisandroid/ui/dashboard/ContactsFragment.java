@@ -12,10 +12,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.ravisandroid.R;
 import com.example.ravisandroid.databinding.FragmentDashboardBinding;
 
-public class DashboardFragment extends Fragment {
+public class ContactsFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
     private FragmentDashboardBinding binding;
