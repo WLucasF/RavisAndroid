@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Users/lucas/AndroidStudioProjects/RavisAndroid/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.3265625" />
         <entry key="..\:/Users/lucas/AndroidStudioProjects/RavisAndroid/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/lucas/AndroidStudioProjects/RavisAndroid/app/src/main/res/layout/fragment_calendar.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/lucas/AndroidStudioProjects/RavisAndroid/app/src/main/res/layout/fragment_call.xml" value="0.34148550724637683" />
+        <entry key="..\:/Users/lucas/AndroidStudioProjects/RavisAndroid/app/src/main/res/layout/fragment_contacts.xml" value="0.34148550724637683" />
         <entry key="..\:/Users/lucas/AndroidStudioProjects/RavisAndroid/app/src/main/res/layout/fragment_dashboard.xml" value="0.3104166666666667" />
         <entry key="..\:/Users/lucas/AndroidStudioProjects/RavisAndroid/app/src/main/res/layout/fragment_home.xml" value="0.2803442028985507" />
         <entry key="..\:/Users/lucas/AndroidStudioProjects/RavisAndroid/app/src/main/res/layout/fragment_notifications.xml" value="0.3104166666666667" />

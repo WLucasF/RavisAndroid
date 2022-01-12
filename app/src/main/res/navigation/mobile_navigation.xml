@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_contacts">
+    app:startDestination="@+id/navigation_circle">
 
 
     <fragment
-        android:id="@+id/navigation_contacts"
-        android:name="com.example.ravisandroid.ui.dashboard.ContactsFragment"
-        android:label="Contacts"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_circle"
+        android:name="com.example.ravisandroid.ui.home.CircleFragment"
+        android:label="Circle"
+        tools:layout="@layout/fragment_circle" />
     <fragment
         android:id="@+id/navigation_calendar"
-        android:name="com.example.ravisandroid.ui.home.HomeFragment"
+        android:name="com.example.ravisandroid.ui.dashboard.CalendarFragment"
         android:label="Calendar"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_calendar" />
     <fragment
         android:id="@+id/navigation_messages"
         android:name="com.example.ravisandroid.ui.notifications.NotificationsFragment"
