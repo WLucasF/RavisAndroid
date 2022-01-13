@@ -11,15 +11,5 @@
         android:icon="@drawable/ic_baseline_calendar_today_24"
         android:title="calendar" />
 
-    <item
-        android:id="@+id/navigation_messages"
-        android:icon="@drawable/ic_baseline_textsms_24"
-        android:title="messages" />
-
-    <item
-        android:id="@+id/navigation_call"
-        android:icon="@drawable/ic_baseline_call_24"
-        android:title="call" />
-
 
 </menu>

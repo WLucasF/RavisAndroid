@@ -16,14 +16,4 @@
         android:name="com.example.ravisandroid.ui.dashboard.CalendarFragment"
         android:label="Calendar"
         tools:layout="@layout/fragment_calendar" />
-    <fragment
-        android:id="@+id/navigation_messages"
-        android:name="com.example.ravisandroid.ui.notifications.NotificationsFragment"
-        android:label="Messages"
-        tools:layout="@layout/fragment_notifications" />
-    <fragment
-        android:id="@+id/navigation_call"
-        android:name="com.example.ravisandroid.ui.notifications.NotificationsFragment"
-        android:label="Call"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>
