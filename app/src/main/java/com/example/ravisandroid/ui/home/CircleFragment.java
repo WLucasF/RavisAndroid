@@ -11,13 +11,36 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ravisandroid.R;
 import com.example.ravisandroid.databinding.FragmentCircleBinding;
 
 public class CircleFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private View CircleView;
+    private RecyclerView myCircle;
+
+    public CircleFragment(){
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        CircleView = inflater.inflate(R.layout.fragment_circle, container, false);
+
+        myCircle = (RecyclerView) CircleView.findViewById(R.id.circle_list);
+        myCircle.setLayoutManager(new LinearLayoutManager(getContext()));
+        return CircleView;
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+    }
+
+
+/*    private HomeViewModel homeViewModel;
     private FragmentCircleBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -42,5 +65,5 @@ public class CircleFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
+    }*/
 }
