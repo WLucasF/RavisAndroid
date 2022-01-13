@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "761620211716",
+    "project_id": "ravisandroid-cf71c",
+    "storage_bucket": "ravisandroid-cf71c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761620211716:android:64f50e47ce10898ff02d51",
+        "android_client_info": {
+          "package_name": "com.example.ravisandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761620211716-1g53nbcutfhn5n4500uj7k76umqg5o9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEAe5mz6VydRRiOumOpe-5zJhgjWQXVbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761620211716-1g53nbcutfhn5n4500uj7k76umqg5o9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
