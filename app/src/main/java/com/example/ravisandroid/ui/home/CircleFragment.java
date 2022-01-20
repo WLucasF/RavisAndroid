@@ -25,6 +25,12 @@ public class CircleFragment extends Fragment {
     public CircleFragment(){
     }
 
+    /*
+    W Lucas Franklin
+    01/13/2022
+    Add contact list functionality.
+     */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         CircleView = inflater.inflate(R.layout.fragment_circle, container, false);

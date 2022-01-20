@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ravisandroid">
+    package="com.example.ravisandroid" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="Ravis"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="ravis"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RavisAndroid">
+        android:theme="@style/Theme.RavisAndroid" >
+        <activity
+            android:name=".UserAccountActivity"
+            android:exported="false"
+            android:label="my account"
+            />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="create account"
+            />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="login"
+            />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="Ravis">
+            android:label="ravis" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
