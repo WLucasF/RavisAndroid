@@ -31,9 +31,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAccountActivity extends AppCompatActivity {
 
-        private Button updateAccountSettings;
-        private EditText accountName, birthDate, accountAddress;
-        private CircleImageView userAccountImage;
+        //acc = account
+        private Button updateAccSettings;
+        private EditText accName, accPhoneNumber, accAddress;
+        private CircleImageView userAccImage;
 
         private String currentUserID;
         private FirebaseAuth mAuth;
@@ -50,27 +51,35 @@ public class UserAccountActivity extends AppCompatActivity {
 
         initializeFields();
 
-        updateAccountSettings.setOnClickListener(new View.OnClickListener() {
+        updateAccSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateSettings();
             }
         });
 
-//      retrieveUserInfo();
+      retrieveUserInfo();
 
     }
 
-/*    private void retrieveUserInfo() {
+    /*
+    W Lucas Franklin
+    01/20/2022
+    Show user info in boxes where data already exists.
+     */
+    private void retrieveUserInfo() {
         rootRef.child("Users").child(currentUserID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists() && (snapshot.hasChild("name") && (snapshot.hasChild("image")))){
                     String retrieveUserName = snapshot.child("name").getValue().toString();
-                    String retrieveProfilePic = snapshot.child("image").getValue().toString();
+                    String retrieveUserPic = snapshot.child("image").getValue().toString();
+
+                    accName.setText(retrieveUserName);
                 }
                 else if (snapshot.exists() && (snapshot.hasChild("name"))){
-
+                    String retrieveUserName = snapshot.child("name").getValue().toString();
+                    accName.setText(retrieveUserName);
                 }
             }
 
@@ -78,20 +87,20 @@ public class UserAccountActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        })
+        });
 
-    }*/
+    }
 
     private void initializeFields() {
-        updateAccountSettings = (Button) findViewById(R.id.set_account_update_button);
-        accountName = (EditText) findViewById(R.id.set_account_name);
-        birthDate = (EditText) findViewById(R.id.set_account_birth_date);
-        accountAddress = (EditText) findViewById(R.id.set_account_address);
-        userAccountImage = (CircleImageView) findViewById(R.id.set_account_image);
+        updateAccSettings = (Button) findViewById(R.id.set_acc_update_button);
+        accName = (EditText) findViewById(R.id.set_acc_name);
+        accPhoneNumber = (EditText) findViewById(R.id.set_acc_phone_num);
+        accAddress = (EditText) findViewById(R.id.set_acc_address);
+        userAccImage = (CircleImageView) findViewById(R.id.set_acc_image);
     }
 
     private void updateSettings() {
-        String setAccountName = accountName.getText().toString();
+        String setAccountName = accName.getText().toString();
 
         if (TextUtils.isEmpty(setAccountName)){
             Toast.makeText(this, "please write your name", Toast.LENGTH_SHORT).show();

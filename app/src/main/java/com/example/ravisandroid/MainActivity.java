@@ -1,13 +1,20 @@
 package com.example.ravisandroid;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -87,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 if (snapshot.child("name").exists()){
                 }
                 else{
-                    sendUserToSettingsActivity();
+                    sendUserToUserAccActivity();
                 }
             }
 
@@ -118,9 +125,14 @@ public class MainActivity extends AppCompatActivity {
             mAuth.signOut();
             sendUserToLoginActivity();
         }
-        if (item.getItemId() == R.id.user_account_option){
-            sendUserToSettingsActivity();
+        if (item.getItemId() == R.id.main_user_account_option){
+            sendUserToUserAccActivity();
         }
+
+        if (item.getItemId() == R.id.main_create_group_option){
+            requestNewGroup();
+        }
+
         if (item.getItemId() == R.id.main_search_option){
 
         }
@@ -128,6 +140,59 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /*
+    W Lucas Franklin
+    01/20/2022
+    Create groups to put people in.
+    In the top right settings menu.
+    */
+    private void requestNewGroup() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
+        builder.setTitle("enter group name");
+
+        final EditText groupNameField = new EditText(MainActivity.this);
+        groupNameField.setHint("e.g. Bunker Bitches");
+        builder.setView(groupNameField);
+
+        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String groupName = groupNameField.getText().toString();
+
+                if (TextUtils.isEmpty(groupName)){
+                    Toast.makeText(MainActivity.this, "no name entered", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    createNewGroup(groupName);
+                }
+            }
+        });
+
+        //Cancel button
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
+    }
+
+    private void createNewGroup(String groupName) {
+        rootRef.child("Groups").child(groupName).setValue("null").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(MainActivity.this, groupName + " group has been created", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+
+    /*
+    sendUserTo functions.
+     */
     private void sendUserToLoginActivity() {
         Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -135,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    private void sendUserToSettingsActivity() {
+    private void sendUserToUserAccActivity() {
         Intent settingsIntent = new Intent(MainActivity.this, UserAccountActivity.class);
         startActivity(settingsIntent);
     }

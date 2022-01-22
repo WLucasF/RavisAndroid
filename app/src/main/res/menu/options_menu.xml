@@ -4,14 +4,21 @@
 
     <item
         android:title="me"
-        android:id="@+id/user_account_option"
+        android:id="@+id/main_user_account_option"
         app:showAsAction="never"
         >
     </item>
 
     <item
-        android:title="search circle"
+        android:title="search"
         android:id="@+id/main_search_option"
+        app:showAsAction="never"
+        >
+    </item>
+
+    <item
+        android:title="new group"
+        android:id="@+id/main_create_group_option"
         app:showAsAction="never"
         >
     </item>
